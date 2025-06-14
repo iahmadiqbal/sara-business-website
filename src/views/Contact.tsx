@@ -1,8 +1,12 @@
+import ContactBanner from "../components/contactcomponent/ContactBanner";
+import ContactSection from "../components/contactcomponent/ContactSection";
+
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact page is Here</h1>
-    </div>
+    <>
+      <ContactBanner />
+      <ContactSection />
+    </>
   );
 };
 

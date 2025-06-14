@@ -31,9 +31,6 @@ const Header = () => {
           <Link to="/pricing" className="hover:text-blue-600 transition">
             Pricing
           </Link>
-          <Link to="/blog" className="hover:text-blue-600 transition">
-            Blog
-          </Link>
         </nav>
 
         {/* Contact Us Button (Desktop Only) */}
@@ -81,9 +78,7 @@ const Header = () => {
           >
             Pricing
           </Link>
-          <Link to="/blog" className="block text-gray-700 hover:text-blue-600">
-            Blog
-          </Link>
+
           <Link to="/contact">
             <button className="w-full bg-[#875CF9] text-white px-4 py-2 rounded-md hover:bg-[#6C4ED4] transition">
               Contact Us
