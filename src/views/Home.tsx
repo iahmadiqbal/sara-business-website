@@ -13,38 +13,38 @@ const Home: React.FC = () => {
   return (
     <>
       <section
-        className="min-h-screen flex items-center px-4 py-10 font-sans"
+        className="bg-cover bg-center h-screen flex items-center justify-center"
         style={{
           background:
             "linear-gradient(to right, #F9F8FF 0%, #F9F8FF 55%, #C0A9F2 100%)",
         }}
       >
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center md:text-left">
+        <div className="container mx-auto sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center text-center px-4">
             {/* Main Heading */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              <span className="text-[#323232] block">Transform Your</span>
-              <span className="text-[#8861EA] block">Grow Business</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              <span className="text-[#323232]">Transform Your</span>
+              <span className="text-[#8861EA] ml-4">Grow Business</span>
               <span className="text-[#323232] block">
                 with Strategic IT Solutions
               </span>
             </h1>
 
             {/* Paragraph */}
-            <p className="text-gray-700 text-sm sm:text-base md:text-lg mb-8">
+            <p className="text-gray-600 text-lg sm:text-xl mb-8 max-w-2xl">
               Leverage cutting-edge IT solutions tailored to your business
               needs. Embrace a future where technology fuels your success.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
                 <button className="bg-[#875CF9] text-white px-6 py-3 rounded-md hover:bg-[#6C4ED4] transition font-medium">
                   Get in Touch
                 </button>
               </Link>
               <Link to="/learn-more">
-                <button className="bg-white text-gray-800 px-6 py-3 rounded-md hover:bg-gray-100 transition font-medium">
+                <button className="bg-gray-800 text-white px-6 py-3 rounded-md border border-gray-800 hover:bg-gray-700 transition font-medium">
                   Learn more
                 </button>
               </Link>
