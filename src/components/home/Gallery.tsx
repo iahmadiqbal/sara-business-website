@@ -12,7 +12,7 @@ const Gallery = () => {
       </div>
 
       <div className="overflow-x-hidden w-full">
-        <div className="flex w-[200%] animate-scroll-x items-center gap-10 px-4">
+        <div className="flex w-max animate-scroll-x items-center gap-10 px-4">
           <img
             src="/images/square.svg"
             alt="square"
@@ -47,12 +47,12 @@ const Gallery = () => {
       <style>
         {`
           @keyframes scroll-x {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
           }
 
           .animate-scroll-x {
-            animation: scroll-x 20s linear infinite;
+            animation: scroll-x 30s linear infinite;
           }
         `}
       </style>
