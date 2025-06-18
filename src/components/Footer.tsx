@@ -26,28 +26,36 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex justify-center space-x-6">
           <a
-            href="#"
+            href="https://twitter.com/your_username"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Twitter"
             className="hover:text-[#1DA1F2] text-lg"
           >
             <FaTwitter />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/your_username"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
             className="hover:text-[#0A66C2] text-lg"
           >
             <FaLinkedinIn />
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/your_username"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook"
             className="hover:text-[#1877F2] text-lg"
           >
             <FaFacebookF />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/your_username"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="hover:text-[#E1306C] text-lg"
           >
