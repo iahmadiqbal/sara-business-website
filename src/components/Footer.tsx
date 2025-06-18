@@ -14,7 +14,7 @@ const Footer = () => {
           <img
             src="/images/logo.png"
             alt="Sara Logo"
-            className="mx-auto w-24 h-auto sm:w-32"
+            className="mx-auto w-24 sm:w-32 filter invert brightness-0"
           />
           <p className="mt-4 max-w-xl mx-auto text-sm sm:text-base px-2">
             Our beautiful designs open the door to a realm of limitless
