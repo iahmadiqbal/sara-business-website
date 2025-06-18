@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -14,10 +15,8 @@ const Header = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // scrolling down
         setShowHeader(false);
       } else {
-        // scrolling up
         setShowHeader(true);
       }
 
@@ -32,7 +31,13 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
         showHeader ? "translate-y-0" : "-translate-y-full"
-      } bg-transparent`}
+      }`}
+      style={{
+        background:
+          "linear-gradient(to right, white 0%, rgba(255,255,255,0.1) 100%)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
         {/* Logo */}
@@ -95,10 +100,7 @@ const Header = () => {
           >
             Services
           </Link>
-          <Link
-            to="/about"
-            className="block text-gray-700 hover:text-blue-600"
-          >
+          <Link to="/about" className="block text-gray-700 hover:text-blue-600">
             About
           </Link>
           <Link
@@ -107,7 +109,7 @@ const Header = () => {
           >
             Pricing
           </Link>
-          <Link  to="/contact">
+          <Link to="/contact">
             <button className="w-full bg-[#875CF9] text-white px-4 py-2 rounded-md hover:bg-[#6C4ED4] transition cursor-pointer">
               Contact Us
             </button>

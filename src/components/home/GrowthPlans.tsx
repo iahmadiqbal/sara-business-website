@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa";
 
-const pricingPlans = [
+const monthlyPlans = [
   {
     title: "Starter",
     price: "$5.00",
@@ -43,7 +44,31 @@ const pricingPlans = [
   },
 ];
 
+const yearlyPlans = [
+  {
+    title: "Starter",
+    price: "$50.00",
+    period: "Per Year",
+    features: monthlyPlans[0].features,
+  },
+  {
+    title: "Premium",
+    price: "$250.00",
+    period: "Per Year",
+    features: monthlyPlans[1].features,
+  },
+  {
+    title: "Premium Plan",
+    price: "$400.00",
+    period: "Per Year",
+    features: monthlyPlans[2].features,
+  },
+];
+
 const GrowthPlans = () => {
+  const [isYearly, setIsYearly] = useState(false);
+  const plansToDisplay = isYearly ? yearlyPlans : monthlyPlans;
+
   return (
     <section className="bg-white py-12 px-4 sm:px-6 md:px-10 lg:px-20">
       <div className="max-w-7xl mx-auto text-center">
@@ -53,17 +78,31 @@ const GrowthPlans = () => {
 
         {/* Toggle Buttons */}
         <div className="flex justify-center gap-4 mt-4 mb-10 flex-wrap">
-          <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700">
+          <button
+            onClick={() => setIsYearly(false)}
+            className={`px-4 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors duration-200 ${
+              !isYearly
+                ? "bg-[#875CF9] text-white"
+                : "bg-white text-gray-700 border border-gray-300"
+            }`}
+          >
             Monthly
           </button>
-          <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700">
+          <button
+            onClick={() => setIsYearly(true)}
+            className={`px-4 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors duration-200 ${
+              isYearly
+                ? "bg-[#1E2939] text-white"
+                : "bg-white text-gray-700 border border-gray-300"
+            }`}
+          >
             Yearly
           </button>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {pricingPlans.map((plan, index) => {
+          {plansToDisplay.map((plan, index) => {
             const isMiddle = index === 1;
 
             return (
